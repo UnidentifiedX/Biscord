@@ -11,7 +11,7 @@ Feel free to fork the repository. Pull requests are always welcome.
 
 ## Terms of use
 You may do whatever you want with the source code/application. I bear no responsibility if you choose to selfbot, which is against Discord's [Terms of Service](https://discord.com/terms).
-Bot tokens may also be used with this application, but with valid intents available. Proceed at your own risk.
+Bot tokens may also be used with this application, but with valid intents enabled. Proceed at your own risk.
 
 ## Supported Platforms
 ### Windows
