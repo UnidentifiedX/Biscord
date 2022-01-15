@@ -1,0 +1,145 @@
+﻿<Window x:Class="Biscord.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Biscord"
+        mc:Ignorable="d"
+        Background="#36393E"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.ColumnSpan="4"
+                Background="#252525"
+                MouseDown="Border_MouseDown">
+
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="🅱️iscord"
+                       Foreground="Gray"
+                       FontWeight="SemiBold"/>
+
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <Button Width="20" Height="20"
+                            Content="🗕"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Margin="0, 0, 0, 3"
+                            Click="ButtonMinimise_Click"/>
+
+                    <Button Width="20" Height="20"
+                            Content="□"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontSize="15"
+                            FontWeight="UltraBold"
+                            Margin="0, 0, 0, 5"
+                            Click="WindowStateButton_Click"/>
+
+                    <Button Width="20" Height="20"
+                            Content="✕"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontSize="10"
+                            FontWeight="Bold"
+                            Margin="0, 1, 0, 0"
+                            Click="CloseButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Background="#2f3136"
+              Grid.Row="1">
+            <Grid.RowDefinitions>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0">
+                <StackPanel Name="GuildPanel">
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid Grid.Row="1"
+              Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0">
+                <StackPanel Name="ChannelsPanel">
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <StackPanel Name="StatusBar"
+                        Grid.Row="1"
+                        Background="#23272A"
+                        Orientation="Horizontal">
+                <Ellipse Name="UserIcon"
+                         Margin="10, 0, 0, 0"
+                         Width="50"
+                         Height="50"
+                         Stretch="UniformToFill">
+                </Ellipse>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2"
+              Grid.Column="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0"
+                            Background="#23272A"
+                            Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" 
+                               Margin="10"
+                               Foreground="White"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Name="ChannelName"></TextBlock>
+                </StackPanel>
+
+                <ScrollViewer Name="MessageScrollViewer"
+                    Grid.Row="1">
+                    <StackPanel Name="MessagePanel">
+                    </StackPanel>
+                </ScrollViewer>
+
+                <TextBox Grid.Row="2"
+                         Margin="15, 10, 60, 10"
+                         Padding="5, 10, 0, 10"
+                         FontSize="14"
+                         AcceptsReturn="False"
+                         SpellCheck.IsEnabled="True"
+                         Name="MessageInputBox">
+
+                </TextBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
